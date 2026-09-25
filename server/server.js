@@ -5,7 +5,7 @@ const { GoogleGenAI } = require('@google/genai')
 
 const app = express()
 
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
@@ -178,6 +178,6 @@ Return ONLY valid JSON. Do not include markdown or any extra text.
 }
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on http://localhost:${PORT}`)
 })
