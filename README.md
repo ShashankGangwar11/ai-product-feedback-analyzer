@@ -222,7 +222,13 @@ Potential future enhancements include:
 
 ## 📸 Screenshots
 
-Screenshots will be added here after the project is deployed.
+### Homepage
+
+![AI Product Feedback Analyzer Homepage](screenshots/homepage.png)
+
+### AI Analysis Dashboard
+
+![AI Product Feedback Analyzer Dashboard](screenshots/analysis-dashboard.png)
 
 ## 👨‍💻 Author
 
