@@ -79,7 +79,7 @@ app.get('/api/ai-test', async (req, res) => {
   try {
     const response = await generateWithRetry({
   model: 'gemini-3.6-flash',
-  contents: prompt,
+  contents: 'Reply with exactly: Gemini AI connection successful.',
 })
 
     res.json({
