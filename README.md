@@ -4,6 +4,10 @@ An AI-powered product research tool that transforms raw customer reviews into st
 
 Paste multiple customer reviews and get AI-generated sentiment analysis, recurring themes, key issues, positive feedback, product recommendations, and review-level sentiment classification.
 
+## 🚀 Live Demo
+
+[Try AI Product Feedback Analyzer](https://ai-product-feedback-analyzer.vercel.app)
+
 ## ✨ Features
 
 - 📊 Overall sentiment analysis
