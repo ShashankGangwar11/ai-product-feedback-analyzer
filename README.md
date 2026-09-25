@@ -1,37 +1,38 @@
 # AI Product Feedback Analyzer
 
-An AI-powered product research tool that transforms raw customer reviews into structured product insights.
+A full-stack web application that analyzes customer reviews using Google Gemini and converts them into structured product insights.
 
-Paste multiple customer reviews and get AI-generated sentiment analysis, recurring themes, key issues, positive feedback, product recommendations, and review-level sentiment classification.
+Paste multiple customer reviews and get sentiment analysis, key issues, recurring themes, positive feedback, product recommendations, and sentiment classification for each review.
 
-## 🚀 Live Demo
+## Live Demo
 
-[Try AI Product Feedback Analyzer](https://ai-product-feedback-analyzer.vercel.app)
+[AI Product Feedback Analyzer](https://ai-product-feedback-analyzer.vercel.app)
 
-## ✨ Features
+## Features
 
-- 📊 Overall sentiment analysis
-- 📝 AI-generated feedback summary
-- 🔍 Key issue detection
-- 👍 Positive feedback extraction
-- 🎯 Product priority identification
-- 🧩 Recurring theme detection with mention counts
-- 💡 Actionable product recommendations
-- 💬 Individual review sentiment classification
-- 📈 Sentiment distribution overview
-- 🧹 Clear and reset analysis
-- 📱 Responsive mobile-friendly interface
-- ⚡ AI-powered analysis using Google Gemini
+- Overall sentiment analysis
+- AI-generated feedback summary
+- Key issue detection
+- Positive feedback extraction
+- Product priority identification
+- Recurring theme detection with mention counts
+- Product improvement recommendations
+- Individual review sentiment classification
+- Sentiment distribution
+- Responsive interface
+- Clear and reset analysis
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
+
 - React
 - Vite
 - JavaScript
 - CSS
 
 ### Backend
+
 - Node.js
 - Express.js
 - Google Gemini API
@@ -39,27 +40,32 @@ Paste multiple customer reviews and get AI-generated sentiment analysis, recurri
 - CORS
 - dotenv
 
-## 🏗️ Architecture
+## Architecture
 
+```text
 Customer Reviews
-       ↓
+       |
+       v
 React Frontend
-       ↓
+       |
+       v
 Express.js Backend
-       ↓
+       |
+       v
 Google Gemini API
-       ↓
-Structured JSON Analysis
-       ↓
+       |
+       v
+Structured JSON Response
+       |
+       v
 Insights Dashboard
+```
 
-## 🔎 What the Analyzer Produces
-
-For a set of customer reviews, the application generates:
+## What the Analyzer Produces
 
 ### Overall Sentiment
 
-Classifies the overall feedback as:
+Classifies the overall customer feedback as:
 
 - Positive
 - Neutral
@@ -67,11 +73,11 @@ Classifies the overall feedback as:
 
 ### Key Issues
 
-Identifies the major pain points mentioned by customers.
+Identifies the main problems and pain points mentioned in the reviews.
 
 ### Positive Feedback
 
-Highlights what customers appreciate about the product.
+Highlights the aspects of the product that customers like.
 
 ### Recurring Themes
 
@@ -79,17 +85,39 @@ Groups related feedback into themes and estimates how many reviews mention each 
 
 ### Product Recommendations
 
-Converts customer pain points into practical product improvement recommendations with impact levels.
+Generates practical product improvement recommendations based on the issues and recurring themes found in the reviews.
 
 ### Review Sentiments
 
-Classifies every individual review as Positive, Neutral, or Negative.
+Classifies each individual review as Positive, Neutral, or Negative.
 
 ### Sentiment Distribution
 
-Provides a visual breakdown of positive, neutral, and negative reviews.
+Shows the distribution of positive, neutral, and negative reviews.
 
-## 🚀 Getting Started
+## Project Structure
+
+```text
+ai-product-feedback-analyzer/
+|
+├── public/
+├── Screenshots/
+├── server/
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+|
+├── src/
+│   ├── App.jsx
+│   └── App.css
+|
+├── .gitignore
+├── README.md
+├── package.json
+└── vite.config.js
+```
+
+## Run Locally
 
 ### 1. Clone the repository
 
@@ -113,13 +141,13 @@ npm install
 
 ### 4. Configure the Gemini API
 
-Create a `.env` file inside the `server` folder:
+Create a `.env` file inside the `server` directory:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
-Never commit your API key to GitHub.
+Do not commit the API key to GitHub.
 
 ### 5. Start the backend
 
@@ -129,11 +157,21 @@ From the `server` directory:
 node server.js
 ```
 
-The backend runs on:
+The backend runs locally on:
 
-`http://localhost:5000`
+```text
+http://localhost:5000
+```
 
-### 6. Start the frontend
+### 6. Configure the frontend
+
+Create a `.env` file in the project root:
+
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+### 7. Start the frontend
 
 Open another terminal in the project root:
 
@@ -141,21 +179,22 @@ Open another terminal in the project root:
 npm run dev
 ```
 
-The frontend runs on:
+The frontend runs locally on:
 
-`http://localhost:5173`
+```text
+http://localhost:5173
+```
 
-## 🔐 Environment Variables
-
-The backend requires:
+## Environment Variables
 
 | Variable | Description |
 |---|---|
-| `GEMINI_API_KEY` | Google Gemini API key used for AI analysis |
+| `GEMINI_API_KEY` | Google Gemini API key used by the backend for AI analysis |
+| `VITE_API_URL` | Backend URL used by the frontend |
 
-The `.env` file is excluded from Git using `.gitignore`.
+The `.env` files are excluded from Git using `.gitignore`.
 
-## 📡 API
+## API
 
 ### Health Check
 
@@ -163,7 +202,7 @@ The `.env` file is excluded from Git using `.gitignore`.
 GET /api/health
 ```
 
-Returns the backend health status.
+Used to check whether the backend is running.
 
 ### Analyze Reviews
 
@@ -183,48 +222,42 @@ Example request:
 }
 ```
 
-The endpoint returns structured AI-generated analysis including sentiment, themes, issues, recommendations, and review-level sentiment.
+The endpoint returns structured analysis containing sentiment, summary, issues, themes, recommendations, and review-level sentiment.
 
-## 🎯 Product Research Use Case
+## Product Research Use Case
 
-The goal of this project is to demonstrate how unstructured customer feedback can be converted into actionable product research.
+The project demonstrates how unstructured customer feedback can be converted into structured product insights.
 
-Instead of manually reading hundreds of reviews, a product team can use the analyzer to quickly identify:
+Instead of manually reviewing a large number of customer comments, a product team can use the analyzer to identify:
 
 - What customers like
 - What customers dislike
 - Recurring problems
-- Important product themes
-- Potential improvement areas
+- Common themes
+- Areas for improvement
 - Overall customer sentiment
 
-## 📱 Responsive Design
+## Responsive Design
 
-The interface is designed to work across:
+The interface is designed for:
 
 - Desktop
 - Tablet
 - Mobile
 
-The analysis dashboard automatically adapts its layout for smaller screens.
+The results dashboard adapts to smaller screen sizes.
 
-## 🔮 Future Improvements
+## Deployment
 
-Potential future enhancements include:
+The frontend is deployed on Vercel.
 
-- CSV review upload
-- Review history
-- Product/project workspaces
-- Authentication
-- Persistent database storage
-- Advanced analytics
-- Sentiment trend charts
-- Export reports as PDF
-- Multi-product comparison
-- Batch review processing
-- Production deployment
+The backend is deployed on Render.
 
-## 📸 Screenshots
+The deployed frontend communicates with the backend using the `VITE_API_URL` environment variable.
+
+The Gemini API key is stored as a server-side environment variable and is not exposed in the frontend.
+
+## Screenshots
 
 ### Homepage
 
@@ -234,8 +267,20 @@ Potential future enhancements include:
 
 ![AI Product Feedback Analyzer Dashboard](Screenshots/analysis-dashboard.png)
 
-## 👨‍💻 Author
+## Future Improvements
 
-**Shashank Gangwar**
+- CSV review upload
+- Review history
+- Database storage
+- User authentication
+- Sentiment trend charts
+- Advanced analytics
+- PDF report export
+- Multi-product comparison
+- Batch review processing
 
-Built as an AI-powered product research portfolio project.
+## Author
+
+Shashank Gangwar
+
+Built as a portfolio project to explore AI-powered product research and full-stack application development.
