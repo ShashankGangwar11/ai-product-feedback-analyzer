@@ -224,11 +224,11 @@ Potential future enhancements include:
 
 ### Homepage
 
-![AI Product Feedback Analyzer Homepage](screenshots/homepage.png)
+![AI Product Feedback Analyzer Homepage](Screenshots/homepage.png)
 
 ### AI Analysis Dashboard
 
-![AI Product Feedback Analyzer Dashboard](screenshots/analysis-dashboard.png)
+![AI Product Feedback Analyzer Dashboard](Screenshots/analysis-dashboard.png)
 
 ## 👨‍💻 Author
 
